@@ -7,6 +7,9 @@ author:
 baseurl: '/blog'
 permalink: pretty
 
+sass:
+    sass_dir: _scss
+
 compress_html:
   clippings: all
 
