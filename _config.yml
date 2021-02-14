@@ -6,3 +6,6 @@ author:
 
 compress_html:
   clippings: all
+
+paginate: 5
+paginate_path: "/page/:num/"

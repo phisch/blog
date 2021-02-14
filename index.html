@@ -1,5 +1,53 @@
 ---
 layout: home
-title: "Home"
+title: "Blog"
 navigation_order: 0
 ---
+{% for post in paginator.posts %}
+    <article>
+        <header>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        </header>
+        {% if post.excerpt %}
+            <p>{{ post.excerpt }}</p>
+        {% endif %}
+        <footer>
+            <span>{{ post.date | date_to_long_string }}</span>
+        </footer>
+    </article>
+{% endfor %}
+
+{% assign from = paginator.page | minus: 3 | at_least: 1 %}
+{% assign to = paginator.page | plus: 3 | at_most: paginator.total_pages %}
+{% if paginator.total_pages > 1 %}
+    <ol class="pagination">
+        <li>
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+            {% else %}
+                <span>Previous</span>
+            {% endif %}
+        </li>
+        {% if from > 1 %}<li><span>...</span></li>{% endif %}
+        {% for page_number in (from..to)%}
+            {% if page_number == paginator.page %}
+                <li class="current">{{ page_number }}</li>
+            {% else %}
+                {% if page_number == 1 %}
+                    {% assign url = '/' | relative_url %}
+                {% else %}
+                    {% assign url = site.paginate_path | relative_url | replace: ':num', page_number %}
+                {% endif %}
+                <li><a href="{{ url }}">{{ page_number }}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if to < paginator.total_pages %}<li><span>...</span></li>{% endif %}
+        <li>
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+            {% else %}
+                <span>Next</span>
+            {% endif %}
+        </li>
+    </ol>
+{% endif %}
