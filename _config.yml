@@ -4,6 +4,8 @@ author:
   name: Philipp Schaffrath
   website: https://github.com/phisch
 
+baseurl: '/blog'
+
 compress_html:
   clippings: all
 

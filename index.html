@@ -6,7 +6,7 @@ navigation_order: 0
 {% for post in paginator.posts %}
     <article>
         <header>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         </header>
         {% if post.excerpt %}
             <p>{{ post.excerpt }}</p>
@@ -34,11 +34,11 @@ navigation_order: 0
                 <li class="current">{{ page_number }}</li>
             {% else %}
                 {% if page_number == 1 %}
-                    {% assign url = '/' | relative_url %}
+                    {% assign url = '/' %}
                 {% else %}
-                    {% assign url = site.paginate_path | relative_url | replace: ':num', page_number %}
+                    {% assign url = site.paginate_path | replace: ':num', page_number %}
                 {% endif %}
-                <li><a href="{{ url }}">{{ page_number }}</a></li>
+                <li><a href="{{ url | relative_url }}">{{ page_number }}</a></li>
             {% endif %}
         {% endfor %}
         {% if to < paginator.total_pages %}<li><span>...</span></li>{% endif %}

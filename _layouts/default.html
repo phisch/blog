@@ -9,14 +9,14 @@ layout: compress
 </head>
 <body>
     <header>
-        <a href="{{site.url}}" id="logo"><span class="subdomain">blog.</span>phisch<span class="tld">.codes</span></a>
+        <a href="{{ '/' | relative_url }}" id="logo"><span class="subdomain">blog.</span>phisch<span class="tld">.codes</span></a>
         <nav>
             <ol>
                 {% assign navigation_pages = site.pages | sort: "navigation_order" %}
                 {% for p in navigation_pages %}
                     {% if p.navigation_order != null and p.layout == "page" or p.layout == "home" and p.url == "/" %}
                         <li class="{% if p.url == page.url %}current{% endif %}">
-                            <a href="{{ p.url }}">{{ p.title }}</a>
+                            <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}
