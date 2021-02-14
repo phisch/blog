@@ -1,0 +1,20 @@
+#logo {
+  color: #fff;
+  font-weight: normal;
+  font-size: 2em;
+  text-decoration: none;
+
+  .subdomain {
+    display: inline-block;
+    position: absolute;
+    
+    transform: translate(-100%, 7px);
+    
+    color: #7B2AE2;
+    font-size: 0.75em;
+  }
+
+  .tld {
+    font-size: 0.5em;
+  }
+}
