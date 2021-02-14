@@ -1,1 +1,4 @@
 title: blog.phisch.codes
+
+compress_html:
+  clippings: all
