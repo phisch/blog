@@ -2,12 +2,42 @@
 layout: compress
 ---
 <!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
 <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{% if page.title %}{{ page.title | append: " | "}}{% endif %}{{ site.title }}</title>
 </head>
 <body>
-    {{content}}
+    <header>
+        <a href="{{site.url}}" id="logo"><span class="subdomain">blog.</span>phisch<span class="tld">.codes</span></a>
+        <nav>
+            <ol>
+                {% assign navigation_pages = site.pages | sort: "navigation_order" %}
+                {% for p in navigation_pages %}
+                    {% if p.navigation_order != null and p.layout == "page" or p.layout == "home" and p.url == "/" %}
+                        <li class="{% if p.url == page.url %}current{% endif %}">
+                            <a href="{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </nav>
+    </header>
+    <section id="preview"></section>
+    <main>
+        {{ content }}
+    </main>
+    <footer>
+        <p>
+            © {{ 'now' | date: "%Y" }}
+            <span class="author">
+                {% if site.author.website %}
+                    <a href="{{ site.author.website }}">{{ site.author.name }}</a>
+                {% else %}
+                    {{ site.author.name }}
+                {% endif %}
+            </span>
+        </p>
+    </footer>
 </body>
 </html>

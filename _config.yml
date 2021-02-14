@@ -1,4 +1,8 @@
 title: blog.phisch.codes
 
+author:
+  name: Philipp Schaffrath
+  website: https://github.com/phisch
+
 compress_html:
   clippings: all
