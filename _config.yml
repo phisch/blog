@@ -5,6 +5,7 @@ author:
   website: https://github.com/phisch
 
 baseurl: '/blog'
+permalink: pretty
 
 compress_html:
   clippings: all
