@@ -1,0 +1,54 @@
+$background: rgb(24,24,24);
+$background-contrast: rgb(15,15,15);
+$background-main: rgb(32,32,32);
+
+body {
+  background: $background-contrast;
+  display: flex;
+  flex-direction: column;
+
+  > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+  > section#preview {
+    padding: 1em;
+    background: $background;
+    box-shadow: rgba(0,0,0,0.5) 0 0 6px;
+  }
+
+  > main {
+    flex: 1;
+  }
+
+  > header, > section#preview, > main, > footer {
+    width: 960px;
+    margin: auto auto;
+    box-sizing: border-box;
+  }
+
+  > main, > footer {
+    position: relative;
+    padding: 1em;
+  
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: calc((100vw - 100%) / 2);
+      background: $background;
+    }
+  
+    &::before { right: 100%; box-shadow: inset -8px 0 6px -8px rgba(0,0,0,0.5); }
+    &::after { left: 100%; box-shadow: inset 8px 0 6px -8px rgba(0,0,0,0.5); }
+  
+    & > :first-child { margin-top: 0; }
+  }
+
+  > main { background: $background-main; }
+  > footer { background: $background-contrast; }
+}
