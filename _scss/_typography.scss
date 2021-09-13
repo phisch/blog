@@ -13,7 +13,27 @@ h1, h2, h3, h4, h5, h6 {
 	a {
 		color: rgba(255,255,255,0.9);
 		text-decoration: none;
-	}
+  }
+  
+  a.anchor {
+    &::before {
+      content: '#';
+      display: inline-block;
+      margin-left: 0.2em;
+      opacity: 0;
+      color: rgba(255,255,255,0.1);
+      font-weight: thin;
+    }
+    
+  }
+
+  &:hover {
+
+    a.anchor {
+      &::before { opacity: 1; }
+      &:hover::before { opacity: 1; }
+    }
+  }
 }
 
 h1 { font-size: 3rem; }
@@ -22,3 +42,48 @@ h3 { font-size: 2rem; }
 h4 { font-size: 1.75rem; }
 h5 { font-size: 1.5rem; }
 h6 { font-size: 1.25rem; }
+
+hr { border-color: rgba(255,255,255,0.2); }
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+  margin: 0;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 1em;
+	border-left: 4px solid rgba(255,255,255,0.1);
+}
+
+p {margin: 1em 0;}
+
+table {
+  border-collapse: collapse;
+  thead {
+    background: rgba(0, 0, 0, 0.4);
+    th {
+      text-align: left;
+      white-space: nowrap;
+      padding: 14px 14px;
+    }
+  }
+  tbody {
+    tr {
+      background: rgba(0, 0, 0, 0.2);
+      &:nth-child(even) {
+        background: rgba(0, 0, 0, 0.3);
+      }
+      td {
+        padding: 6px 14px;
+      }
+    }
+  }
+}
+
+ul, ol {
+  li {
+    margin-bottom: 0.5em;
+  }
+}
