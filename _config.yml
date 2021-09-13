@@ -32,3 +32,11 @@ giscus:
   emit_metadata: false
   theme: transparent_dark
   crossorigin: anonymous
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: table
+    wrap: false
+    span:
+      line_numbers: false
