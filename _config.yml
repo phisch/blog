@@ -18,3 +18,17 @@ pagination:
   trail: 
     before: 2
     after: 2
+
+giscus:
+  enabled: true
+  repository:
+    name: "phisch/blog"
+    id: "MDEwOlJlcG9zaXRvcnkzMzg2NDAwMTU="
+  category:
+    name: "Comments"
+    id: "DIC_kwDOFC88j84B-k2z"
+  mapping: "pathname"
+  reactions: true
+  emit_metadata: false
+  theme: transparent_dark
+  crossorigin: anonymous
