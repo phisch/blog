@@ -1,0 +1,19 @@
+$surface-1: #0F0F10;
+$surface-2: #1C1C1C;
+$surface-3: #242323;
+
+$accent-primary: #6914D6;
+$accent-secondary: #3ECD88;
+
+$foreground: rgb(240, 240, 240);
+$foreground-dimmed: transparentize($foreground, 0.7);
+
+$syntax-foreground: $foreground;
+$syntax-red: #e65c5c;
+$syntax-orange: #e6955c;
+$syntax-yellow: #e6da5c;
+$syntax-green: #5ce65c;
+$syntax-cyan: #5ce6e6;
+$syntax-blue: #5c8ae6;
+$syntax-purple: #835ce6;
+$syntax-pink: #e65ce6;

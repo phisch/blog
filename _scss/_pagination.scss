@@ -1,26 +1,21 @@
+@import 'colors';
+
 ol.pagination {
     list-style: none;
     display: flex;
     padding: 0;
-    
-    
-    
+
     li {
         margin: 0;
-        background: #7B2AE2;
+        background: $accent-primary;
 
         span, a {
-            color: white;
+            color: $foreground;
             display: inline-block;
             padding: .8em;
         }
 
-        &:first-child {
-            border-radius: .5em 0 0 .5em;
-        }
-
-        &:last-child {
-            border-radius: 0 .5em .5em 0;
-        }
+        &:first-child { border-radius: .5em 0 0 .5em; }
+        &:last-child { border-radius: 0 .5em .5em 0; }
     }
 }

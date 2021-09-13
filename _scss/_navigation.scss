@@ -1,16 +1,18 @@
+@import 'colors';
+
 nav#navigation ol {
   list-style: none;
   padding: 0;
   display: flex;
 
   li a {
-    color: rgba(255,255,255,0.9);
+    color: $foreground;
     padding: 6px 12px;
     border-radius: 3px;
     text-decoration: none;
 
     &:hover {
-      background: #7B2AE2;
+      background: $accent-primary;
     }
   }
 }

@@ -1,8 +1,9 @@
+@import 'colors';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	color: rgba(255,255,255,0.9);
+	color: $foreground;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 
 	a {
-		color: rgba(255,255,255,0.9);
+		color: $foreground;
 		text-decoration: none;
   }
   
@@ -21,14 +22,12 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
       margin-left: 0.2em;
       opacity: 0;
-      color: rgba(255,255,255,0.1);
+      color: $foreground-dimmed;
       font-weight: thin;
     }
-    
   }
 
   &:hover {
-
     a.anchor {
       &::before { opacity: 1; }
       &:hover::before { opacity: 1; }
@@ -36,14 +35,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1.25rem; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.3rem; }
 
-hr { border-color: rgba(255,255,255,0.2); }
+hr { border-color: $foreground-dimmed; }
+
+
+a {
+  color: $accent-secondary;
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: lighten($accent-secondary, 30%);
+  }
+}
 
 pre {
   font-family: monospace, monospace;
@@ -54,29 +64,29 @@ pre {
 blockquote {
   margin: 0;
   padding-left: 1em;
-	border-left: 4px solid rgba(255,255,255,0.1);
+	border-left: 4px solid $foreground-dimmed;
 }
 
-p {margin: 1em 0;}
+p { margin: 1em 0; }
 
 table {
   border-collapse: collapse;
   thead {
-    background: rgba(0, 0, 0, 0.4);
+    background: darken($surface-3, 6%);
     th {
       text-align: left;
       white-space: nowrap;
-      padding: 14px 14px;
+      padding: 1em;
     }
   }
   tbody {
     tr {
-      background: rgba(0, 0, 0, 0.2);
+      background: darken($surface-3, 3%);
       &:nth-child(even) {
-        background: rgba(0, 0, 0, 0.3);
+        background: darken($surface-3, 5%);
       }
       td {
-        padding: 6px 14px;
+        padding: 0.5em 1em;
       }
     }
   }

@@ -1,6 +1,4 @@
-$background: rgb(24,24,24);
-$background-contrast: rgb(15,15,15);
-$background-main: rgb(32,32,32);
+@import 'colors';
 
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -11,7 +9,7 @@ $background-main: rgb(32,32,32);
 }
 
 body {
-  background: $background-contrast;
+  background: $surface-1;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -26,8 +24,8 @@ body {
   }
 
   > section#preview {
-    padding: 1em;
-    background: $background;
+    padding: 1.5em;
+    background: $surface-2;
     box-shadow: rgba(0,0,0,0.5) 0 0 6px;
   }
 
@@ -43,7 +41,7 @@ body {
 
   > main, > footer {
     position: relative;
-    padding: 2em;
+    padding: 1.5em;
   
     &::before, &::after {
       content: '';
@@ -51,7 +49,7 @@ body {
       top: 0;
       bottom: 0;
       width: calc((100vw - 100%) / 2);
-      background: $background;
+      background: $surface-2;
     }
   
     &::before { right: 100%; box-shadow: inset -8px 0 6px -8px rgba(0,0,0,0.5); }
@@ -60,6 +58,6 @@ body {
     & > :first-child { margin-top: 0; }
   }
 
-  > main { background: $background-main; }
-  > footer { background: $background-contrast; }
+  > main { background: $surface-3; }
+  > footer { background: $surface-1; }
 }
