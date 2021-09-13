@@ -4,14 +4,17 @@ author:
   name: Philipp Schaffrath
   website: https://github.com/phisch
 
-baseurl: '/blog'
-permalink: pretty
-
 sass:
-    sass_dir: _scss
+  sass_dir: _scss
 
-compress_html:
-  clippings: all
+baseurl: '/blog'
+permalink: /:year/:day/:title
 
-paginate: 5
-paginate_path: "/page/:num/"
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'
+  title: ':title - page :num of :max'
+  trail: 
+    before: 2
+    after: 2
