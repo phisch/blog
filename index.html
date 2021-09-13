@@ -14,7 +14,7 @@ navigation_order: 0
             <p>{{ post.excerpt }}</p>
         {% endif %}
         <footer>
-            <span>{{ post.date | date_to_long_string }}</span>
+            <span data-date="{{ post.date }}" title="{{ post.date | date_to_rfc822 }}">{{ post.date | date_to_long_string }}</span>
         </footer>
     </article>
 {% endfor %}
