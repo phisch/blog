@@ -9,6 +9,20 @@ function setCodeBlockLanguageAttributes() {
     );
 }
 
+function createHeadingAnchors() {
+    document.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(element => {
+        if(element.matches('body > main > *')) {
+            let token = element.textContent.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/[ ]/g, '-');
+            element.id = token;
+            let link = document.createElement("a");
+            link.href = `#${token}`;
+            link.classList.add('anchor');
+            element.append(link);
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', event => {
     setCodeBlockLanguageAttributes();
+    createHeadingAnchors();
 });
