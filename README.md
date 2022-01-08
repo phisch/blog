@@ -11,10 +11,10 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 ```
 
-Install the `jekyll` and `bundler` gems:
+Install the `bundler` gem:
 
 ```sh
-gem install jekyll bundler
+gem install bundler
 ```
 
 Clone this repository and install its dependencies using `bundler`:
