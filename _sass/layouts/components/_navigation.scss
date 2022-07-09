@@ -1,0 +1,24 @@
+@use '../../colors';
+
+nav#navigation ol {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+
+  li {
+    &.current a {
+      color: colors.$accent-secondary;
+      border-bottom: 3px solid colors.$accent-secondary;
+    }
+    a {
+      padding: 8px 0;
+      color: colors.$foreground;
+      text-decoration: none;
+  
+      &:hover {
+        color: colors.$accent-secondary;
+      }
+    }
+  }
+}

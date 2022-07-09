@@ -1,4 +1,4 @@
-@import 'colors';
+@use 'colors';
 
 ol.pagination {
     list-style: none;
@@ -7,10 +7,10 @@ ol.pagination {
 
     li {
         margin: 0;
-        background: $accent-primary;
+        background: colors.$accent-primary;
 
         span, a {
-            color: $foreground;
+            color: colors.$foreground;
             display: inline-block;
             padding: .8em;
         }

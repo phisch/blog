@@ -1,0 +1,31 @@
+@use '../../colors';
+
+#logo {
+  color: colors.$foreground;
+  font-weight: bold;
+  font-size: 2em;
+  text-decoration: none;
+
+  .subdomain {
+    display: inline-block;
+    position: absolute;
+    
+    transform: translate(-100%, 1em);
+    
+    color: colors.$accent-primary;
+    font-size: 0.5em;
+    font-weight: normal;
+  }
+
+  .tld {
+    font-size: 0.5em;
+    font-weight: normal;
+    color: rgba(colors.$foreground, 0.2);
+  }
+
+  &:hover {
+    .tld {
+      color: colors.$accent-secondary;
+    }
+  }
+}

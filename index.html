@@ -7,15 +7,34 @@ navigation_order: 0
 ---
 {% for post in paginator.posts %}
     <article>
+        {% if post.image %}
+            <section class="preview">
+                {% if post.image_after %}
+                    <section class="image-compare"
+                        {% if page.image_compare_vertical %}data-compare_vertical="true"{% endif %}
+                        {% if page.image_compare_hover %}data-compare_hover="true"{% endif %} data-compare_fluid="true">
+                        <img src="{{ site.baseurl }}{{ post.image }}" alt="" srcset="">
+                        <img src="{{ site.baseurl }}{{ post.image_after }}" alt="" srcset="">
+                    </section>
+                {% else %}
+                    <img src="{{ site.baseurl }}{{ post.image }}" alt="" srcset="">
+                {% endif %}
+            </section>
+        {% endif %}
         <header>
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p>
+                <span data-date="{{ post.date }}" title="{{ post.date | date_to_rfc822 }}">{{ post.date | date_to_long_string }}</span>
+                {% if post.author %}
+                <span>by {{ post.author }}</span>
+                {% endif %}
+            </p>    
         </header>
-        {% if post.excerpt %}
-            <p>{{ post.excerpt }}</p>
-        {% endif %}
-        <footer>
-            <span data-date="{{ post.date }}" title="{{ post.date | date_to_rfc822 }}">{{ post.date | date_to_long_string }}</span>
-        </footer>
+        <section class="content">
+            {% if post.excerpt %}
+                <p>{{ post.excerpt }}</p>
+            {% endif %}
+        </section>
     </article>
 {% endfor %}
 

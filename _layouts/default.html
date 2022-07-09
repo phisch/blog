@@ -6,8 +6,8 @@ layout: compress
 <head>
     <meta charset="utf-8">
     <title>{% if page.title %}{{ page.title | append: " | "}}{% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
-    <script src="{{ '/assets/main.js' | relative_url }}"></script>
+    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}">
+    <!-- <script src="{{ '/assets/scripts/bundle.js' | relative_url }}"></script>-->
 </head>
 <body>
     <header>
@@ -16,8 +16,8 @@ layout: compress
             <ol>
                 {% assign navigation_pages = site.pages | sort: "navigation_order" %}
                 {% for p in navigation_pages %}
-                    {% if p.navigation_order != null and p.layout == "page" or p.layout == "home" and p.url == "/" %}
-                        <li class="{% if p.url == page.url %}current{% endif %}">
+                    {% if p.navigation_order != null and p.layout == "page" or p.layout == "home" %}
+                        <li {% if p.url == page.url %}class="current"{% endif %}>
                             <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
                         </li>
                     {% endif %}
@@ -25,10 +25,23 @@ layout: compress
             </ol>
         </nav>
     </header>
-    <section id="preview"><h1>{{ page.title }}</h1></section>
-    <main data-layout="{{page.layout}}">
-        {{ content }}
-    </main>
+    <section id="preview">
+        {% if page.image %}
+            {% if page.image_after %}
+                <section class="image-compare"
+                    {% if page.image_compare_vertical %}data-compare_vertical="true"{% endif %}
+                    {% if page.image_compare_hover %}data-compare_hover="true"{% endif %}>
+                    <img src="{{ site.baseurl }}{{ page.image }}" alt="" srcset="">
+                    <img src="{{ site.baseurl }}{{ page.image_after }}" alt="" srcset="">
+                </section>
+            {% else %}
+                <img src="{{ site.baseurl }}{{ page.image }}" alt="" srcset="">
+            {% endif %}
+        {% else %}
+            <h1>{{ page.title }}</h1>
+        {% endif %}
+    </section>
+    <main data-layout="{{page.layout}}">{{ content }}</main>
     <footer>
         <p>
             © {{ 'now' | date: "%Y" }}

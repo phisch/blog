@@ -1,0 +1,34 @@
+.before-after-image-slider {
+    --split: 50%;
+    --horizontal: 1;
+    --not-horizontal: calc(1 - var(--horizontal));
+
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+
+    * { pointer-events: none; }
+
+    > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding-left: 100%;
+        background-position: center center;
+        background-size: cover;
+
+        &:nth-child(2) {
+            clip-path: inset(calc(var(--split) * var(--not-horizontal)) 0 0 calc(var(--split) * var(--horizontal)));
+        }
+    }
+
+    .split {
+        --thickness: 6px;
+        position: absolute;
+        height: calc(var(--thickness) * var(--not-horizontal) + 100% * var(--horizontal));
+        width: calc(var(--thickness) * var(--horizontal) + 100% * var(--not-horizontal));
+        left: calc((var(--split) - var(--thickness) / 2) * var(--horizontal));
+        top: calc((var(--split) - var(--thickness) / 2) * var(--not-horizontal));
+        background: rgba(255,255,255,1);
+    }
+}

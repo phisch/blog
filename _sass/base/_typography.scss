@@ -1,9 +1,10 @@
-@import 'colors';
+@use 'colors';
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	color: $foreground;
+	color: colors.$foreground;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 
 	a {
-		color: $foreground;
+		color: colors.$foreground;
 		text-decoration: none;
   }
   
@@ -22,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
       margin-left: 0.2em;
       opacity: 0;
-      color: $foreground-dimmed;
+      color: colors.$foreground-dimmed;
       font-weight: thin;
     }
   }
@@ -42,16 +43,16 @@ h4 { font-size: 1.5rem; }
 h5 { font-size: 1.4rem; }
 h6 { font-size: 1.3rem; }
 
-hr { border-color: $foreground-dimmed; }
+hr { border-color: colors.$foreground-dimmed; }
 
 
 a {
-  color: $accent-secondary;
+  color: colors.$accent-secondary;
   text-decoration: none;
   transition: color 200ms ease-in-out;
 
   &:hover {
-    color: lighten($accent-secondary, 30%);
+    color: lighten(colors.$accent-secondary, 30%);
   }
 }
 
@@ -64,15 +65,18 @@ pre {
 blockquote {
   margin: 0;
   padding-left: 1em;
-	border-left: 4px solid $foreground-dimmed;
+	border-left: 4px solid colors.$foreground-dimmed;
 }
 
-p { margin: 1em 0; }
+p {
+  margin: 1em 0;
+  max-width: 80ch;
+}
 
 table {
   border-collapse: collapse;
   thead {
-    background: darken($surface-3, 6%);
+    background: darken(colors.$surface-3, 6%);
     th {
       text-align: left;
       white-space: nowrap;
@@ -81,9 +85,9 @@ table {
   }
   tbody {
     tr {
-      background: darken($surface-3, 3%);
+      background: darken(colors.$surface-3, 3%);
       &:nth-child(even) {
-        background: darken($surface-3, 5%);
+        background: darken(colors.$surface-3, 5%);
       }
       td {
         padding: 0.5em 1em;

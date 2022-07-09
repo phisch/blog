@@ -4,20 +4,23 @@ author:
   name: Philipp Schaffrath
   website: https://github.com/phisch
 
-sass:
-  sass_dir: _scss
-
 baseurl: '/blog'
 permalink: /:year/:day/:title
 
 pagination:
   enabled: true
+  sort_reverse: true
   per_page: 5
   permalink: '/page/:num/'
   title: ':title - page :num of :max'
   trail: 
     before: 2
     after: 2
+
+sass:
+  style: compressed
+  sourcemap: development
+  implementation: sass-embedded
 
 giscus:
   enabled: true
@@ -30,7 +33,7 @@ giscus:
   mapping: "pathname"
   reactions: true
   emit_metadata: false
-  theme: transparent_dark
+  theme: https://localhost:4000/blog/assets/styles/giscus.css
   crossorigin: anonymous
 
 kramdown:
@@ -40,3 +43,7 @@ kramdown:
     wrap: false
     span:
       line_numbers: false
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"

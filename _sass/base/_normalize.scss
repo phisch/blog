@@ -1,0 +1,51 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+:root {
+	scroll-behavior: smooth;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+summary {
+  display: list-item;
+}

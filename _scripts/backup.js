@@ -1,3 +1,20 @@
+import { version } from '../package.json';
+
+export default function () {
+  console.log('version ' + version);
+}
+
+/*
+import ImageCompare from "./node_modules/image-compare-viewer/image-compare-viewer";
+
+const viewers = document.querySelectorAll(".image-compare");
+  
+viewers.forEach((element) => {
+  let view = new ImageCompare(element).mount();
+});
+*/
+
+/*
 function setCodeBlockLanguageAttributes() {
     const prefix = "language-";
     document.querySelectorAll(`div.highlighter-rouge[class^=${prefix}]`).forEach(
@@ -62,3 +79,5 @@ document.addEventListener('DOMContentLoaded', event => {
     createHeadingAnchors();
     replaceDatesWithRelativeTimes();
 });
+
+*/

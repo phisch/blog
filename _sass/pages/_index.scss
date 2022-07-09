@@ -1,0 +1,33 @@
+@use 'colors';
+
+main > article {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid colors.$foreground-dimmed;
+
+    display: grid; 
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    .preview {
+        display: inline;
+        float: left;
+        width: 30%;
+        height: 200px;
+        .image-compare {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .content {
+    }
+}

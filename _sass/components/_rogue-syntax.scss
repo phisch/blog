@@ -1,7 +1,7 @@
-@import 'colors';
+@use 'colors';
 
 .highlighter-rouge {
-  background: darken($surface-3, 6%);
+  background: darken(colors.$surface-3, 6%);
   border-radius: 0.5em;
   font-size: 0.9em;
   line-height: 1.4em;
@@ -26,7 +26,7 @@
   @at-root code#{&} {
     padding: 0.5em 0.8em;
     margin: 0 0.1em;
-    color: $syntax-yellow;
+    color: colors.$syntax-yellow;
   }
   
   @at-root div#{&} {
@@ -38,15 +38,15 @@
       top: 0;
       right: 0;
       padding: 1.5em;
-      color: $foreground-dimmed;
+      color: colors.$foreground-dimmed;
       font-size: 0.8em;
       line-height: 0.8em;
     }
   }
 
   .rouge-gutter {
-    color: $foreground-dimmed;
-    background: darken($surface-3, 4%);
+    color: colors.$foreground-dimmed;
+    background: darken(colors.$surface-3, 4%);
     padding: 1em;
   }
 
@@ -56,16 +56,16 @@
   
   &, .err, .g, .l, .x, .p, .ge, .gr, .gh, .gi, .gp, .gs, .gu,
   .gt, .ld, .no, .nd, .ni, .ne, .nn, .nx, .py, .w, .bp {
-    color: $syntax-foreground;
+    color: colors.$syntax-foreground;
   }
-  .go { color: $foreground-dimmed; }
-  .gd { color: $syntax-red; }
-  .k, .o, .cp, .kc, .kn, .kp, .kr, .nt, .ow { color: $syntax-orange; }
-  .na, .nc, .nf, .fm { color: $syntax-yellow; }
-  .hll, .s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: $syntax-green; }
-  .m, .mb, .mf, .mh, .mi, .mo, .il { color: $syntax-cyan; }
-  .c, .ch, .cm, .cpf, .c1, .cs { color: $syntax-blue; }
-  .n + .p + .n, .kd, .kt, .nb, .nl, .nv, .vc, .vg, .vi, .vm { color: $syntax-purple; }
+  .go { color: colors.$foreground-dimmed; }
+  .gd { color: colors.$syntax-red; }
+  .k, .o, .cp, .kc, .kn, .kp, .kr, .nt, .ow { color: colors.$syntax-orange; }
+  .na, .nc, .nf, .fm { color: colors.$syntax-yellow; }
+  .hll, .s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: colors.$syntax-green; }
+  .m, .mb, .mf, .mh, .mi, .mo, .il { color: colors.$syntax-cyan; }
+  .c, .ch, .cm, .cpf, .c1, .cs { color: colors.$syntax-blue; }
+  .n + .p + .n, .kd, .kt, .nb, .nl, .nv, .vc, .vg, .vi, .vm { color: colors.$syntax-purple; }
   .kd, .nb, .nl, .nv, .vc, .vg, .vi, .vm { font-style: italic; }
   .gh, .gi, .gu { font-weight: bold; }
   .ge { text-decoration: underline; }
